@@ -1,7 +1,6 @@
 def func(str):
-    liststr = list(str)
-    revstr = liststr[::-1]
-    if liststr != revstr:
+    revstr = str[::-1]
+    if str != revstr:
         return False
     else:
         return True
