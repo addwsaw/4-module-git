@@ -1,5 +1,7 @@
 h1 {
-    background: red;
+    text-align: center;
+    font-size: 35px;
+    font-style: avenir;
 }
 .text1 {
     font-size: 24px;
