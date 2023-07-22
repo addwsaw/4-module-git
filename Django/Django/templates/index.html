@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
-  <title>Index</title>
-</head>
+{% extends 'base.html' %}
+{%load static %}
+{% block title %}
+Главная
+{% endblock %}
 
-<body>
+{% block content %}
 {% load static %}
 <ul class="nav nav-pills sticky-top bg-white nav-fill">
   <li class="nav-item">
@@ -24,27 +17,27 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% static 'advertisement-post.html' %}">
+    <a class="nav-link" href="{% url 'advertisement-post' %}">
       <span style="font-weight: bold;">Разместить объявление</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% static 'register.html' %}">
+    <a class="nav-link" href="{% url 'register' %}">
       <span style="font-weight: bold;">Регистрация</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% static 'login.html' %}">
+    <a class="nav-link" href="{% url 'login' %}">
       <span style="font-weight: bold;">Войти</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% static 'profile.html' %}">
+    <a class="nav-link" href="{% url 'profile' %}">
       <span style="font-weight: bold;">Профиль</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% static '#' %}">
+    <a class="nav-link" href="#">
       <span style="font-weight: bold;">Выйти</span>
     </a>
   </li>
@@ -216,7 +209,10 @@
     </div>
   </nav>
 </footer>
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-</body>
+{% endblock %}
 
-</html>
+{% block script %}
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+{% endblock %}
