@@ -1,8 +1,20 @@
 from django import forms
-
-class AdvertisementsForms(forms.Form):
-    title = forms.CharField(max_length=64, widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
-    description = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
-    price = forms.DecimalField(widget=forms.NumberInput(attrs={'class': 'form-control form-control-lg'}))
-    auction = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control form-control-lg'}))
+from django.db import models
+from django.forms import ModelForm, TextInput, NumberInput, CheckboxInput, FileInput
+class Advertisement(models.Model):
+    title = models.CharField("заголовок", max_length=64)
+    description = models.TextField("описание")
+    price = models.DecimalField("цена", max_digits=10, decimal_places=2)
+    auction = models.BooleanField("торг", help_text="Отметьте, если торг уместен")
+    image = models.ImageField("изображение")
+class AdvertisementsForms(ModelForm):
+    class Meta:
+        model = Advertisement
+        fields = ['title', 'description', 'price', 'auction', 'image']
+        widgets = {
+            'title': TextInput(attrs={'class': 'form-control form-control-lg'}),
+            'description': TextInput(attrs={'class': 'form-control form-control-lg'}),
+            'price': NumberInput(attrs={'class': 'form-control form-control-lg'}),
+            'auction': CheckboxInput(attrs={'class': 'form-check-input'}),
+            'image': FileInput(attrs={'class': 'form-control form-control-lg'})
+        }
