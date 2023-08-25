@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.html import format_html
 from django.contrib.auth import get_user_model
-
+from django.contrib import admin
 User = get_user_model()
 class Advertisements(models.Model):
 
