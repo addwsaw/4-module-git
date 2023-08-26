@@ -5,13 +5,13 @@ from django.contrib import admin
 User = get_user_model()
 class Advertisements(models.Model):
 
-    title = models.CharField('Загаловок', max_length=128)
+    title = models.CharField('Заголовок', max_length=128)
     description = models.TextField('Описание')
     price = models.DecimalField('Цена', max_digits=13, decimal_places=2)
     auction = models.BooleanField('Торг', help_text='Отметьте если торг уместен')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, verbose_name='Пользователи', on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE, null=True)
     image = models.ImageField(verbose_name="Изображение", upload_to='Django/')
     def __str__(self):
         return f"Advertisements(id={self.id}, title={self.title}, price={self.price})"
