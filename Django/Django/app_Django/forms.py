@@ -7,8 +7,10 @@ from django.utils.html import format_html
 
 def title_validator(value):
     if value[0] == '?':
+        red_word = format_html('<span style="color: red; font-weight: bold;">Ошибка!</span>')
+        error = _(f"{red_word} Заголовок не может начинаться со знака '?'")
         raise ValidationError(
-            _("Ошибка! Заголовок не может начинаться со знака '?'"),
+            error,
             params={'value': value},
         )
 
