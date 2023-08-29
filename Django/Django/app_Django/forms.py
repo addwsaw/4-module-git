@@ -31,9 +31,3 @@ class AdvertisementsForms(ModelForm):
             'auction': CheckboxInput(attrs={'class': 'form-check-input'}),
             'image': FileInput(attrs={'class': 'form-control form-control-lg'})
         }
-def title_validator():
-    list_title = list(Advertisement.title)
-    if list_title[0] == '?':
-        raise ValidationError(
-            "Заголовок не может начинаться со знака '?'"
-        )

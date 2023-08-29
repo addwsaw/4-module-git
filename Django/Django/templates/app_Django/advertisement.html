@@ -27,7 +27,7 @@
         <span style="font-weight: bold;">Разместить объявление</span>
       </a>
     </li>
-    {% if user is None %}
+    {% if not user.is_authenticated %}
     <li class="nav-item">
       <a class="nav-link" href="{% url 'register' %}">
         <span style="font-weight: bold;">Регистрация</span>
@@ -38,8 +38,7 @@
         <span style="font-weight: bold;">Войти</span>
       </a>
     </li>
-    {% endif %}
-    {% if user is not None %}
+    {% else %}
     <li class="nav-item">
       <a class="nav-link" href="{% url 'profile' %}">
         <span style="font-weight: bold;">Профиль</span>
