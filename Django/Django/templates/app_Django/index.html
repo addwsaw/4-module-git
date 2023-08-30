@@ -76,7 +76,7 @@
   <div class="row">
     <ul class="nav nav-tabs bg-white">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Проверенные продавцы</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'top-sellers' %}">Проверенные продавцы</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Новинки</a>
@@ -93,7 +93,7 @@
         <input type="text" class="form-control">
       </div>
       <div class="col-auto">
-        <button type="submit" class="btn btn-success mb-3">Найти</button>
+        <button type="submit" class="btn btn-success mb-3">Поиск</button>
       </div>
     </form>
   </div>
@@ -103,7 +103,7 @@
       <div class="row g-0">
         <div class="col-md-4">
           <a href="advertisement.html" class="nav-link">
-            <img src="{% if adv.image %}{{adv.image.url}}{% else %}{% static 'img/adv.png' %}{% endif %}" class="img-fluid rounded-start" alt="Card title">
+            <img style="width: 300px; heigth: 250px" src="{% if adv.image %}{{adv.image.url}}{% else %}{% static 'img/adv.png' %}{% endif %}" class="img-fluid rounded-start" alt="Card title">
           </a>
         </div>
         <div class="col-md-8">
@@ -128,31 +128,31 @@
 </div>
 <footer style="padding: 100px;" class="bg-primary">
   <nav class="navbar navbar-expand-sm navbar-dark">
-    <a class="navbar-brand" href="#">Добавьте</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
             aria-label="Toggle navigation"></button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav me-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="#" aria-current="page">сюда<span
+          <a class="nav-link active" href="#" aria-current="page"><span
                   class="visually-hidden">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">что</a>
+          <a class="nav-link" href="#"></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
-             aria-expanded="false">хотите</a>
+             aria-expanded="false">Cсылки на соц-сети</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="#">например</a>
-            <a class="dropdown-item" href="#">ссылки на социальные сети</a>
+            <a class="dropdown-item" href="https://vk.com/id628902602">Vk</a>
+            <a class="dropdown-item" href="https://t.me/addwsaw">Telegram</a>
           </div>
         </li>
       </ul>
       <form class="d-flex my-2 my-lg-0">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control me-sm-2" type="text" placeholder="">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Поиск</button>
       </form>
     </div>
   </nav>
